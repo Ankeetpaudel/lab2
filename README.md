@@ -6,10 +6,9 @@
 3.	Tower System 
 4.	Bullet System 
 5.	Design Patterns 
-6.	Scene Structure 
-7.	Technical Details 
-8.	Integration Guide
-9.	Testing
+6.	Scene Structure  
+7.	Integration 
+8.	Testing
     
 
 
@@ -225,8 +224,6 @@ Step-by-step guide to introducing additional towers into the game.
 
 c#
 
-
-
 public partial class NewTower : BaseTower { public override void \_Ready() { base.\_Ready(); // Initialize specific properties } } 
 
 1. **Factory Setup**:
@@ -246,7 +243,6 @@ Explains how to modify or create new bullet types through the builder pattern.
 1. **Integration**:
    1. Ensure the new bullet type is compatible with existing tower types or specifically integrate it with new tower strategies.
 
-**Troubleshooting**
 
 **Common Issues**
 
@@ -261,21 +257,6 @@ Addresses typical problems that may arise during game development or gameplay.
 1. **Placement Issues**:
    1. Double-check collision settings for the Placement area.
    1. Verify layer configurations to prevent logical errors in tower placement.
-
-**Debug Tips**
-
-Provides strategies for diagnosing and resolving issues effectively.
-
-1. **Enable Debug Printing**:
-   1. Utilize Godot's debug capabilities to print important runtime values and states.
-
-c#
-
-
-
-if (OS.IsDebugBuild()) { GD.Print($"Current Target Position: {targetPosition}"); } 
-
-
 1. **Monitor Collision Layers**:
    1. Regularly check and adjust the collision layers and masks to ensure they meet game logic requirements.
 1. **Check Signal Connections**:
