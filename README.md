@@ -8,7 +8,9 @@
 5.	Design Patterns 
 6.	Scene Structure 
 7.	Technical Details 
-8.	Integration Guide 
+8.	Integration Guide
+9.	Testing
+    
 
 
 
@@ -278,6 +280,112 @@ if (OS.IsDebugBuild()) { GD.Print($"Current Target Position: {targetPosition}");
    1. Regularly check and adjust the collision layers and masks to ensure they meet game logic requirements.
 1. **Check Signal Connections**:
    1. Ensure that all signals, especially those related to targeting and shooting, are properly connected and triggered.
+      
+**Testing**
+
+I'll break down every test case from all 4 files, explaining each in one sentence:
+
+\*\*BulletTests.cs:\*\*
+
+1\. `TestBulletInitialization`: Verifies bullets have correct default speed (400) and damage (10).
+
+2\. `TestBulletSceneStructure`: Checks if bullet has required sprite, collision shape, and screen notifier.
+
+3\. `TestBulletCollisionSetup`: Ensures bullet has correct collision layer (4) and mask (2).
+
+4\. `TestStandardBulletBuilder`: Verifies standard bullet builder sets correct speed and damage.
+
+5\. `TestRapidBulletBuilder`: Checks if rapid bullet builder increases bullet speed.
+
+6\. `TestHeavyBulletBuilder`: Confirms heavy bullet builder doubles damage.
+
+7\. `TestBulletMovement`: Tests if bullet moves correctly in the right direction.
+
+\*\*TowerComponentTests.cs:\*\*
+
+1\. `TestTowerSceneStructure`: Verifies tower has all required visual nodes (Sprite2D, body, head).
+
+2\. `TestTowerHeadComponents`: Checks tower head position and bullet spawn point.
+
+3\. `TestTowerSightArea`: Verifies tower's sight area setup and grouping.
+
+4\. `TestTowerPlacementArea`: Tests tower's placement collision area setup.
+
+5\. `TestTowerTimerSetup`: Confirms shooting timer configuration.
+
+6\. `TestTowerAnimationSetup`: Checks tower animation sprites and filters.
+
+7\. `TestTowerInitialState`: Verifies tower's starting conditions.
+
+8\. `TestTowerSceneValidation`: Tests overall tower scene configuration.
+
+\*\*TowerFunctionalityTests.cs:\*\*
+
+1\. `TestTower1Specifications`: Verifies Tower1's shooting interval, rotation speed, bullets, and speed.
+
+2\. `TestTower2Specifications`: Tests Tower2's rapid-fire settings.
+
+3\. `TestTower3Specifications`: Checks Tower3's heavy damage configuration.
+
+4\. `TestTower4Specifications`: Verifies Tower4's quad-shot capabilities.
+
+5\. `TestTower5Specifications`: Tests Tower5's speed-focused settings.
+
+6\. `TestTower4QuadShot`: Specifically tests Tower4's multi-bullet shooting.
+
+7\. `TestTower5Speed`: Verifies Tower5's fast rotation behavior.
+
+8\. `TestTower4Targeting`: Tests Tower4's target acquisition.
+
+9\. `TestTower5Targeting`: Verifies Tower5's targeting behavior.
+
+10\. `TestTowerPlacementValidation`: Checks tower placement rules.
+
+11\. `TestTowerTargetDetection`: Tests enemy detection and rotation.
+
+12\. `TestTowerTargetLoss`: Verifies target loss behavior.
+
+\*\*TowerIntegrationTests.cs:\*\*
+
+1\. `TestTowerFactoryCreation`: Tests tower creation through factory system.
+
+2\. `TestTowerBulletProperties`: Verifies different towers' bullet properties.
+
+3\. `TestTowerPlacementSystem`: Tests tower placement validation.
+
+4\. `TestTowerInitialization`: Checks complete tower initialization.
+
+5\. `TestTowerTargetAcquisition`: Verifies enemy targeting system.
+
+6\. `TestTowerRotation`: Tests tower head rotation towards targets.
+
+7\. `TestTowerShooting`: Comprehensive test of shooting mechanics.
+
+8\. `TestBulletCreation`: Verifies bullet instantiation and setup.
+
+9\. `TestBulletSceneLoading`: Tests bullet scene loading system.
+
+The tests are organized in layers:
+
+\- BulletTests: Focuses on bullet behavior
+
+\- TowerComponentTests: Tests individual tower parts
+
+\- TowerFunctionalityTests: Tests specific tower behaviors
+
+\- TowerIntegrationTests: Tests everything working together
+
+Each file focuses on a different aspect of testing:
+
+\- Unit tests (individual components)
+
+\- Component tests (parts working together)
+
+\- Functionality tests (specific behaviors)
+
+\- Integration tests (complete system)
+
+
 
 
 This extended documentation should provide a comprehensive guide to understanding, extending, and troubleshooting the tower defense game system, fostering both effective development practices and enjoyable gameplay experiences.
